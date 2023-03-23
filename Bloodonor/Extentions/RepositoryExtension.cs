@@ -15,6 +15,12 @@ namespace Bloodonor.Extentions
 
             services.AddDbContext<ApplicationDbContext>(o => o.UseSqlServer(config.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
 
+            services.AddDbContext<ApplicationDbContext>(options =>
+            {
+                var connectionString = config.GetConnectionString("DefaultConnection");
+                options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString), b => b.EnableRetryOnFailure());
+            });
+
             services.AddIdentity<User, Role>()
                .AddEntityFrameworkStores<ApplicationDbContext>()
                .AddDefaultTokenProviders();
