@@ -1,0 +1,485 @@
+﻿@model IEnumerable<BloodGroup>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<section class="hero bg_img" style="background-image: url('assets/images/frontend/banner/60fffe430ffba1627389507.jpg');">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xxl-6 col-xl-7 col-lg-8 text-center">
+                <h2 class="hero__title">A lot of things hurt. Saving lives doesn&#039;t have to</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div class="col-xxl-7 col-xl-8 col-lg-10">
+                <form method="GET" asp-action="location" class="hero__blood-search-form">
+                    <input type="hidden" />
+                    <input type="hidden" />
+                    <div class="input-field">
+                        <i class="las la-tint"></i>
+
+                        <select name="BloodGroupId" asp-items="@(new SelectList(ViewBag.bloodGroups,"BloodGroupId","Name"))" required>
+                            <option value="" selected="" disabled="">Select Blood Group</option>
+                        </select>
+                     @*   <select name="blood_id">
+                           <option value="1">B+</option>
+                            <option value="2">A+</option>
+                            <option value="3">AB+</option>
+                            <option value="4">O+</option>
+                            <option value="5">A-</option>
+                            <option value="6">B-</option>
+                            <option value="7">AB-</option>
+                            <option value="8">O-</option>
+                        </select>*@
+                    </div>
+                    <div class="input-field">
+                        <i class="las la-city"></i>
+                        <select name="LocationId" asp-items="@(new SelectList(ViewBag.location,"LocationId","Name"))" required>
+                            <option value="" selected="" disabled="">Select City</option>
+                        </select>
+                      @*  <select name="city_id">
+                            <option value="1">Abuja-FCT</option>
+                            <option value="2">Lagos</option>
+                            <option value="3">Ibadan</option>
+                            <option value="4">Port-Harcourt</option>
+                            <option value="5">Owerri </option>
+                            <option value="6">Jos </option>
+                            <option value="7">Kaduna </option>
+                            <option value="8">Benin </option>
+                            <option value="9">Maiduguri </option>
+                            <option value="9">Abeokuta  </option>
+                            <option value="10">Lokoja   </option>
+                            <option value="11">Nangere  </option>
+                            <option value="12">Katsina   </option>
+                            <option value="13">Ado-Ekiti  </option>
+                            <option value="14">Enugu   </option>
+                            <option value="15">Jalingo    </option>
+                            <option value="16">Calabar    </option>
+                            <option value="17">Sokoto    </option>
+                        </select>*@
+                    </div>
+                    <div class="btn-area">
+                        <button type="submit" class="btn btn-md btn--base"><i class="las la-search"></i> Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="pt-80 pb-80 position-relative z-index-2 overflow-hidden">
+    <div class="top-el-bg">
+        <img src="~/assets/images/frontend/blood/60fff77d8bf601627387773.png" alt="image">
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 text-center">
+                <div class="section-header mb-5">
+                    <h2 class="section-title">Avaiable Blood Donors</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center gy-4">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-3 col-sm-4 col-6">
+                    <div class="avaiable-blood-single has--link">
+                        <a href="#" class="item--link"></a>
+                        <h6 class="avaiable-blood-single__name"><i class="las la-tint"></i>@item.Name</h6>
+                        <span class="avaiable-blood-single__amount">@item.Avaialable_amount</span>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<section class="pt-100 pb-100 shade--bg">
+    <div class="container">
+        <div class="row gy-5">
+            <div class="col-lg-6">
+                <div class="about-thumb">
+                    <a class="play-btn" href="https://www.youtube.com/embed/watch?v=nH5DJb_L_wA" data-rel="lightcase:myCollection"><i class="las la-play"></i></a>
+                    <img src="~/assets/images/frontend/about/60fff7dc7c1141627387868.jpg" alt="image" class="w-100 h-100">
+                </div>
+            </div>
+
+            <div class="col-lg-6 ps-lg-5">
+                <div class="section-header mb-5 text-sm-start text-center">
+                    <h2 class="section-title">Why BloodLab</h2>
+                    <p>Omnis harum qui vel repudiandae officiis nemo perferendis libero soluta consequuntur culpa, laborum facere, fugiat totam ratione.</p>
+                </div>
+                <div class="row gy-4">
+                    <div class="col-lg-12">
+                        <div class="about-item">
+                            <div class="about-item__icon">
+                                <i class="las la-shield-alt"></i>
+                            </div>
+                            <div class="about-item__content">
+                                <h4 class="about-item__title">All Data is Secured</h4>
+                                <p>Aamet consectetur adipisicing elit. Est voluptatibus accusamus nam labore, quam a quo. Quibusdam est voluptatibus animi quia.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="about-item">
+                            <div class="about-item__icon">
+                                <i class="las la-compass"></i>
+                            </div>
+                            <div class="about-item__content">
+                                <h4 class="about-item__title">Always Free</h4>
+                                <p>Aamet consectetur adipisicing elit. Est voluptatibus accusamus nam labore, quam a quo. Quibusdam est voluptatibus animi quia.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="about-item">
+                            <div class="about-item__icon">
+                                <i class="las la-magic"></i>
+                            </div>
+                            <div class="about-item__content">
+                                <h4 class="about-item__title">100% Automated</h4>
+                                <p>Aamet consectetur adipisicing elit. Est voluptatibus accusamus nam labore, quam a quo. Quibusdam est voluptatibus animi quia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@*<section class="pt-100 pb-100 border-top  position-relative z-index-2 overflow-hidden">
+    <div class="bottom-el-bg">
+        <img src="~/assets/images/frontend/donor/60fff8a0c56951627388064.png" alt="image">
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Top Donors</h2>
+                    <p class="mt-2">Dolor sit amet, consectetur adipisicing elit. Dignissimos soluta est qui totam expedita eaque, deleniti quidem sequi magni iure nulla corporis.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center gy-4">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                <div class="donor-card style--two has--link section--bg2">
+                    <a href="#" class="item--link"></a>
+                    <div class="donor-card__thumb">
+                        <img src="~/assets/images/donor/6108d83ae02901627969594.jpg" alt="image">
+                    </div>
+                    <div class="donor-card__content">
+                        <h6 class="donor-card__name">Md Hasan</h6>
+                        <p class="fs--14px text-white">Blood Group : <span class="text--base">(AB+)</span></p>
+                        <ul class="d-flex flex-wrap align-items-center justify-content-center donor-card__social mt-1">
+                            <li><a href="#" target="_blank"><i class="lab la-twitter"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+    </div>
+</section>*@
+<section class="pt-80 pb-80 img-overlay bg_img" style="background-image: url('assets/images/frontend/overview/60fff964007751627388260.jpg');">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-header text-center">
+                    <h2 class="section-title text-white fw-normal">Bloodlab is committed to advancing public policies that promote safety, increase availability, and spur innovation.</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row gy-4">
+            <div class="col-lg-3 col-6">
+                <div class="overview-item text-center">
+                    <div class="overview-item__icon">
+                        <i class="las la-tint"></i>
+                    </div>
+                    <h6 class="overview-item__caption">8 Blood Groups</h6>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div class="overview-item text-center">
+                    <div class="overview-item__icon">
+                        <i class="las la-hands-helping"></i>
+                    </div>
+                    <h6 class="overview-item__caption">320 Volunteer</h6>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div class="overview-item text-center">
+                    <div class="overview-item__icon">
+                        <i class="las la-map"></i>
+                    </div>
+                    <h6 class="overview-item__caption">52 Areas</h6>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div class="overview-item text-center">
+                    <div class="overview-item__icon">
+                        <i class="las la-user"></i>
+                    </div>
+                    <h6 class="overview-item__caption">5012 Donors</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pt-100 pb-100 border-top  position-relative z-index-2 overflow-hidden">
+    <div class="bottom-el-bg">
+        <img src="~/assets/images/frontend/latest_donor/6107e3696253d1627906921.png" alt="image">
+    </div>
+
+</section>
+<section class="pt-80 pb-80 dark--overlay bg_img" style="background-image: url('assets/images/frontend/how_it_work/60fff8d9bc57d1627388121.jpg');">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-header text-center">
+                    <h2 class="section-title text-white">The Blood Donation Process</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row gy-5">
+            <div class="col-lg-3 col-sm-6 work-card">
+                <div class="work-item">
+                    <div class="work-item__icon">
+                        <span class="step">1</span>
+                        <i class="las la-heartbeat"></i>
+                    </div>
+                    <h5 class="work-item__title text-white">Refreshment and Recovery</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 work-card">
+                <div class="work-item">
+                    <div class="work-item__icon">
+                        <span class="step">2</span>
+                        <i class="las la-tint"></i>
+                    </div>
+                    <h5 class="work-item__title text-white">Blood Donation</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 work-card">
+                <div class="work-item">
+                    <div class="work-item__icon">
+                        <span class="step">3</span>
+                        <i class="las la-file-alt"></i>
+                    </div>
+                    <h5 class="work-item__title text-white">Health History</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 work-card">
+                <div class="work-item">
+                    <div class="work-item__icon">
+                        <span class="step">4</span>
+                        <i class="las la-user"></i>
+                    </div>
+                    <h5 class="work-item__title text-white">Registration</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="pt-100 pb-100 border-top  position-relative z-index-2 overflow-hidden">
+    <div class="bottom-el-bg">
+        <img src="~/assets/images/frontend/featured_donor/6107e35b1f0401627906907.png" alt="image">
+    </div>
+
+   @* <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Featured Donor</h2>
+                    <p class="mt-2">Dolor sit amet, consectetur adipisicing elit. Dignissimos soluta est qui totam expedita eaque, deleniti quidem sequi magni iure nulla corporis.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="donor-slider">
+            <div class="single-slide">
+                <div class="donor-card has--link">
+                    <a href="~/donor/joni/eyJpdiI6ImxUbWFiZk9BRmV6WExsZHFvbUxDd3c9PSIsInZhbHVlIjoicFZQUjV6cFpBQlFQMFVGVnlKYUpiQT09IiwibWFjIjoiNTNiZjUwYmM2ZWQ5OTJhNzRkYzBmMjRjNmU0Mjk0NDlhYThjYWFiY2EyNDY4YzNiYWI1Y2Y1NGYyY2IzZDI1ZCJ9" class="item--link"></a>
+                    <div class="donor-card__thumb">
+                        <img src="~/assets/images/donor/6105516d378201627738477.jpg" alt="image">
+                    </div>
+                    <div class="donor-card__content">
+                        <h6 class="donor-card__name">Joni</h6>
+                        <p class="text-white fs--14px">Blood Group : (AB+)</p>
+                        <span class="donor-card__amount mt-1"><i class="las la-tint"></i> 34 Times</span>
+                    </div>
+                </div>
+            </div>
+            <div class="single-slide">
+                <div class="donor-card has--link">
+                    <a href="~" class="item--link"></a>
+                    <div class="donor-card__thumb">
+                        <img src="~/assets/images/donor/6105373ee389c1627731774.jpg" alt="image">
+                    </div>
+                    <div class="donor-card__content">
+                        <h6 class="donor-card__name">Taira Kabir</h6>
+                        <p class="text-white fs--14px">Blood Group : (A+)</p>
+                        <span class="donor-card__amount mt-1"><i class="las la-tint"></i> 43 Times</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>*@
+</section>
+<section class="pt-100 pb-100 shade--bg2 overflow-hidden">
+    <div class="container border-bottom">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Our Community Partner</h2>
+                    <p>Earum optio in ipsum, non dolore, veritatis molestias assumenda sint aspernatur.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="brand-slider">
+            <div class="single-slide">
+                <div class="partner-item">
+                    <img src="~/assets/images/frontend/patner/60fffa3e49a791627388478.png" alt="image">
+                </div>
+            </div>
+            <div class="single-slide">
+                <div class="partner-item">
+                    <img src="~/assets/images/frontend/patner/60fffa39274da1627388473.png" alt="image">
+                </div>
+            </div>
+            <div class="single-slide">
+                <div class="partner-item">
+                    <img src="~/assets/images/frontend/patner/60fffa346397a1627388468.png" alt="image">
+                </div>
+            </div>
+            <div class="single-slide">
+                <div class="partner-item">
+                    <img src="~/assets/images/frontend/patner/60fffa2f279121627388463.png" alt="image">
+                </div>
+            </div>
+            <div class="single-slide">
+                <div class="partner-item">
+                    <img src="~/assets/images/frontend/patner/60fffa29c492f1627388457.png" alt="image">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="pt-100 pb-100 bg_img dark--overlay overflow-hidden" style="background-image: url(~/assets/images/frontend/testimonial/60fffa7b16d461627388539.jpg);">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <div class="section-header text-center">
+                    <h2 class="section-title  text-white">What Blood Donors say</h2>
+                    <p class="mt-2 text-white">Architecto corporis voluptate ut iure veritatis tempore vitae. Minima ea provident eaque.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-slider">
+            <div class="single-slide">
+                <div class="testimonial-card">
+                    <div class="testimonial-card__content">
+                        <div class="ratings mb-2">
+                            <i class="las la-star"></i>
+                            <i class="las la-star"></i>
+                            <i class="las la-star"></i>
+                            <i class="las la-star"></i>
+                            <i class="las la-star"></i>
+
+                        </div>
+                        <p>Repellat, laudantium soluta laborum distinctio iste modi consectetur, atque, consequatur facere quidem hic unde harum alias molestias eveniet accusantium. Quasi natus aut minima modi saepe beatae reprehenderit illum</p>
+                        <div class="d-flex align-items-center mt-3">
+                            <h5 class="name me-2">Demo7</h5>
+                            <span class="caption fs--14px text--base">(55 times donor)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single-slide">
+                <div class="testimonial-card">
+                    <div class="testimonial-card__content">
+                        <div class="ratings mb-2">
+                            <i class="las la-star"></i>
+                            <i class="las la-star"></i>
+                            <i class="las la-star"></i>
+                            <i class="las la-star"></i>
+                            <i class="las la-star"></i>
+
+                        </div>
+                        <p>Repellat, laudantium soluta laborum distinctio iste modi consectetur, atque, consequatur facere quidem hic unde harum alias molestias eveniet accusantium. Quasi natus aut minima modi saepe beatae reprehenderit illum</p>
+                        <div class="d-flex align-items-center mt-3">
+                            <h5 class="name me-2">Demo6</h5>
+                            <span class="caption fs--14px text--base">(54 times donor)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single-slide">
+                <div class="testimonial-card">
+                    <div class="testimonial-card__content">
+                        <div class="ratings mb-2">
+                            <i class="las la-star"></i>
+                            <i class="las la-star"></i>
+                            <i class="las la-star"></i>
+                            <i class="las la-star"></i>
+                            <i class="las la-star"></i>
+
+                        </div>
+                        <p>Repellat, laudantium soluta laborum distinctio iste modi consectetur, atque, consequatur facere quidem hic unde harum alias molestias eveniet accusantium. Quasi natus aut minima modi saepe beatae reprehenderit illum</p>
+                        <div class="d-flex align-items-center mt-3">
+                            <h5 class="name me-2">Demo6</h5>
+                            <span class="caption fs--14px text--base">(23 times donor)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single-slide">
+                <div class="testimonial-card">
+                    <div class="testimonial-card__content">
+                        <div class="ratings mb-2">
+                            <i class="las la-star"></i>
+                            <i class="las la-star"></i>
+                            <i class="las la-star"></i>
+                            <i class="las la-star"></i>
+                            <i class="las la-star"></i>
+
+                        </div>
+                        <p>Repellat, laudantium soluta laborum distinctio iste modi consectetur, atque, consequatur facere quidem hic unde harum alias molestias eveniet accusantium. Quasi natus aut minima modi saepe beatae reprehenderit illum</p>
+                        <div class="d-flex align-items-center mt-3">
+                            <h5 class="name me-2">Demo2</h5>
+                            <span class="caption fs--14px text--base">(5 times donor)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single-slide">
+                <div class="testimonial-card">
+                    <div class="testimonial-card__content">
+                        <div class="ratings mb-2">
+                            <i class="las la-star"></i>
+                            <i class="las la-star"></i>
+                            <i class="las la-star"></i>
+
+                        </div>
+                        <p>Repellat, laudantium soluta laborum distinctio iste modi consectetur, atque, consequatur facere quidem hic unde harum alias molestias eveniet accusantium. Quasi natus aut minima modi saepe beatae reprehenderit illum</p>
+                        <div class="d-flex align-items-center mt-3">
+                            <h5 class="name me-2">Demo1</h5>
+                            <span class="caption fs--14px text--base">(3 times donor)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

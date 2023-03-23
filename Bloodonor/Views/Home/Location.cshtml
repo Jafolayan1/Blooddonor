@@ -1,0 +1,231 @@
+﻿@{
+
+    ViewData["Title"] = "Locations";
+    var branches = ViewData["branches"] as IEnumerable<Branch>;
+}
+
+
+<div class="main-wrapper">
+    <section class="inner-hero bg_img overlay--one" style="background-image: url('assets/images/frontend/breadcrumb/61023f89990b81627537289.jpg');">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <h2 class="page-title text-white">All Branches</h2>
+                    <ul class="page-breadcrumb justify-content-center">
+                        <li><a href="~">Home</a></li>
+                        <li>All Branches</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="donor-search-area">
+        <div class="container">
+            <form method="GET" action="~/donor/search" class="donor-search-form">
+            </form>
+        </div>
+    </div>
+
+    <section class="pt-50 pb-50 shade--bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-2 col-lg-3 col-md-4 d-md-block d-none">
+                    <a href="#" class="d-block bonus"><img src=""></a>
+                    <a href="#" class="d-block bonus"><img src=""></a>
+                    <a href="#" class="d-block bonus"><img src=""></a>
+                    <a href="#" class="d-block bonus"><img src=""></a>
+                </div>
+                <div class="col-xl-8 col-lg-9 col-md-8">
+                    <div class="row gy-4">
+                        @if (branches != null)
+                        {
+
+                            @foreach (var item in branches)
+                            {
+                                <div class="col-lg-6 col-md-12 col-sm-6">
+                                    <div class="donor-item has--link">
+                                        <a href="" class="item--link"></a>
+                                        <div class="donor-item__thumb">
+                                            <img src="~/uploads/nbsc.jpg" alt="image">
+                                        </div>
+                                        <div class="donor-item__content">
+                                            <h5 class="donor-item__name">@item.Zonal_Director</h5>
+                                            <ul class="donor-item__list mt-2">
+                                                <li class="text-truncate">
+                                                    <i class="las la-map-marker-alt"></i> Location : @item.Location
+                                                </li>
+                                                <li>
+                                                    <span class="text--base">@item.Emaail</span>
+                                                </li>
+                                            </ul>
+                                            <a href="" class="text--base fs--14px text-decoration-underline">See Direction</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+
+
+                        @*   <div class="col-lg-6 col-md-12 col-sm-6">
+                        <div class="donor-item has--link">
+                        <a href="" class="item--link"></a>
+                        <div class="donor-item__thumb">
+                        <img src="~/uploads/nbsc.jpg" alt="image">
+                        </div>
+                        <div class="donor-item__content">
+                        <h5 class="donor-item__name"> Dr. Modu-baba Kagu</h5>
+                        <ul class="donor-item__list mt-2">
+                        <li class="text-truncate">
+                        <i class="las la-map-marker-alt"></i> Location : Maiduguri.
+                        </li>
+                        <li>
+                        <span class="text--base">nbtsmaiduguri@yahoo.com</span>
+                        </li>
+                        </ul>
+                        <a href="" class="text--base fs--14px text-decoration-underline">See Direction</a>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-6">
+                        <div class="donor-item has--link">
+                        <a href="" class="item--link"></a>
+                        <div class="donor-item__thumb">
+                        <img src="~/uploads/nbsc.jpg" alt="image">
+                        </div>
+                        <div class="donor-item__content">
+                        <h5 class="donor-item__name">Col. David Gbenga Olorunfemi</h5>
+                        <ul class="donor-item__list mt-2">
+                        <li class="text-truncate">
+                        <i class="las la-map-marker-alt"></i> Location : Port-Harcourt.
+                        </li>
+                        <li>
+                        <span class="text--base">afbc.mhph@yahoo.com</span>
+                        </li>
+                        </ul>
+                        <a href="" class="text--base fs--14px text-decoration-underline">See Direction</a>
+                        </div>
+                        </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-12 col-sm-6">
+                        <div class="donor-item has--link">
+                        <a href="" class="item--link"></a>
+                        <div class="donor-item__thumb">
+                        <img src="~/uploads/nbsc.jpg" alt="image">
+                        </div>
+                        <div class="donor-item__content">
+                        <h5 class="donor-item__name">Dr. Babatunde Tayo</h5>
+                        <ul class="donor-item__list mt-2">
+                        <li class="text-truncate">
+                        <i class="las la-map-marker-alt"></i> Location :  Abeokuta, Ogun Stat.
+                        </li>
+                        <li>
+                        <span class="text--base">nbtsabeokuta@yahoo.com</span>
+                        </li>
+                        </ul>
+                        <a href="" class="text--base fs--14px text-decoration-underline">See Direction</a>
+                        </div>
+                        </div>
+                        </div>*@
+                    </div>
+                    @*   <nav class="mt-4 pagination-md">
+                    <nav>
+                    <ul class="pagination">
+
+                    <li class="page-item disabled" aria-disabled="true" aria-label="&laquo; Previous">
+                    <span class="page-link" aria-hidden="true">&lsaquo;</span>
+                    </li>
+
+
+
+
+
+                    <li class="page-item active" aria-current="page"><span class="page-link">1</span></li>
+                    <li class="page-item"><a class="page-link" href="https://script.viserlab.com/bloodlab/donor?page=2">2</a></li>
+
+
+                    <li class="page-item">
+                    <a class="page-link" href="https://script.viserlab.com/bloodlab/donor?page=2" rel="next" aria-label="Next &raquo;">&rsaquo;</a>
+                    </li>
+                    </ul>
+                    </nav>
+
+                    </nav>*@
+                </div>
+                <div class="col-xl-2 d-xl-block d-none">
+                    <a href="#" class="d-block bonus"><img src=""></a>
+                    <a href="#" class="d-block bonus"><img src=""></a>
+                    <a href="#" class="d-block bonus"><img src=""></a>
+                    <a href="#" class="d-block bonus"><img src=""></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        (function ($) {
+            "use strict";
+
+            $('select[name=city_id]').on('change', function () {
+                $('select[name=location_id]').html('<option value="" selected="" disabled="">Select One</option>');
+                var locations = $('select[name=city_id] :selected').data('locations');
+                var html = '';
+                locations.forEach(function myFunction(item, index) {
+                    html += `<option value="${item.id}">${item.name}</option>`
+                });
+                $('select[name=location_id]').append(html);
+            });
+
+        })(jQuery)
+    </script>
+    <link rel="stylesheet" href="~/assets/global/css/iziToast.min.css">
+    <script src="~/assets/global/js/iziToast.min.js"></script>
+
+    <script>
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5fe0b9b2a8a254155ab5421d/1eq2tap1m';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+
+    <script>
+        if (window.top != window.self) {
+            document.body.innerHTML += '<div style="position:fixed;top:0;width:100%;z-index:9999999;background:#f8d7da;color:#721c24;text-align:center; padding: 20px;"><p style="font-size:20px; font-weight: bold;">You are using this website under an external iframe!!</p><p style="font-size:16px; margin-top: 20px;">for a better experience, please browse directly instead of an external iframe.</p><a href="' + window.self.location + '" target="_blank" style=" margin-top:20px; color: #fff;background-color: #dc3545; padding: 5px 10px; border-radius: 5px; text-decoration: none;">Browse Directly</a></div>';
+        }
+    </script>
+
+
+    <script>
+        adroll_adv_id = "YXRNNTO7ZBAMFBH67UUE5M";
+        adroll_pix_id = "MMQQDWGN25EXPHGRPA3NLR";
+        adroll_version = "2.0";
+        (function (w, d, e, o, a) {
+            w.__adroll_loaded = true;
+            w.adroll = w.adroll || [];
+            w.adroll.f = ['setProperties', 'identify', 'track'];
+            var roundtripUrl = "https://s.adroll.com/j/" + adroll_adv_id
+                + "/roundtrip.js";
+            for (a = 0; a < w.adroll.f.length; a++) {
+                w.adroll[w.adroll.f[a]] = w.adroll[w.adroll.f[a]] || (function (n) {
+                    return function () {
+                        w.adroll.push([n, arguments])
+                    }
+                })(w.adroll.f[a])
+            }
+            e = d.createElement('script');
+            o = d.getElementsByTagName('script')[0];
+            e.async = 1;
+            e.src = roundtripUrl;
+            o.parentNode.insertBefore(e, o);
+        })(window, document);
+        adroll.track("pageView");
+    </script>
+
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8940522890323334" crossorigin="anonymous"></script>
+
+

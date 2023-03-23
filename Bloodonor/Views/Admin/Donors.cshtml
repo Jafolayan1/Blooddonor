@@ -1,0 +1,982 @@
+﻿@{
+    Layout = "_AdminLayout";
+    var donors = ViewData["donors"] as IEnumerable<Donor>;
+}
+
+        <div class="body-wrapper">
+            <div class="bodywrapper__inner">
+                <div class="row align-items-center mb-30 justify-content-between">
+    <div class="col-lg-6 col-sm-6">
+        <h6 class="page-title">Manage Donor List</h6>
+    </div>
+    <div class="col-lg-6 col-sm-6 text-sm-right mt-sm-0 mt-3 right-part">
+            <a href="https://script.viserlab.com/bloodlab/admin/donor/create" class="btn btn-lg btn--primary float-sm-right box--shadow1 text--small mb-2 ml-0 ml-xl-2 ml-lg-0" ><i class="fa fa-fw fa-paper-plane"></i>Add Donor</a>
+
+     <form action="https://script.viserlab.com/bloodlab/admin/donor/search" method="GET" class="form-inline float-sm-right bg--white mb-2 ml-0 ml-xl-2 ml-lg-0">
+        <div class="input-group has_append">
+            <input type="text" name="search" class="form-control" placeholder="Blood Donor Name....." value="">
+            <div class="input-group-append">
+                <button class="btn btn--primary" type="submit"><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+    </form>
+
+    <form action="https://script.viserlab.com/bloodlab/admin/donor/blood/search" method="GET" class="form-inline float-sm-right bg--white mb-2 ml-0 ml-xl-2 ml-lg-0">
+        <div class="input-group has_append">
+            <select class="form-control" name="blood_id">
+                <option>----Select Blood----</option> 
+                                    <option value="1" >B+</option> 
+                                    <option value="2" >A+</option> 
+                                    <option value="3" >AB+</option> 
+                                    <option value="4" >O+</option> 
+                                    <option value="5" >A-</option> 
+                                    <option value="6" >B-</option> 
+                                    <option value="7" >AB-</option> 
+                                    <option value="8" >O-</option> 
+                           </select>
+            <div class="input-group-append">
+                <button class="btn btn--primary" type="submit"><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+    </form>
+    </div>
+</div>
+                    <div class="row">
+        <div class="col-lg-12">
+            <div class="card b-radius--10 ">
+                <div class="card-body p-0">
+                    <div class="table-responsive--sm table-responsive">
+                        <table class="table table--light style--two">
+                            <thead>
+                                <tr>
+                                    <th>Name - Profession</th>
+                                    <th>Email - Phone</th>
+                                    <th>Blood Group - Location</th>
+                                    <th>Religion - Address</th>
+                                    <th>Gender - Age</th>
+                                    <th>Featured Donor</th>
+                                    <th>Status</th>
+                                    <th>Last Update</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                                            <tr>
+                                    <td data-label="Name - Profession">
+                                        <span>nkbkskbkkbJBKB</span><br>
+                                        <span>hbn,/.,nbvgghv</span>
+                                    </td>
+                                    <td data-label="Email - Phone">
+                                        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7230383030383932353f333b3e5c313d3f">[email&#160;protected]</a></span><br>
+                                        <span>57689809897867565768</span>
+                                    </td>
+                                    <td data-label="Blood Group - Location">
+                                        <span>B+</span><br>
+                                        <span>Addiscombe</span>
+                                    </td>
+                                    <td data-label="Religion - Address">
+                                        <span>/lkjhjghfgsgdfhgj</span><br>
+                                        <span>jhjghgfdfzxfghchvjkblkjbhvcg</span>
+                                    </td>
+
+                                    <td data-label="Gender - Age">
+                                        <span> Male </span><br>
+                                        <span>0 Years</span>
+                                    </td>
+
+                                     <td data-label="Featured Donor">
+
+                                       <span class="badge badge--warning">Not included</span>
+                                            <a href="javascript:void(0)" class="icon-btn btn--success ml-2 include text-white" data-toggle="tooltip" title="" data-original-title="Include" data-id="66">
+                                                <i class="las la-arrow-alt-circle-right"></i>
+                                            </a>
+                                                                            </td>
+
+                                    <td data-label="Status">
+                                                                                    <span class="badge badge--primary">Pending</span>
+                                                                            </td>
+
+                                    <td data-label="Last Update">
+                                        2023-03-12 11:38 AM<br> 6 days ago
+                                    </td>
+
+                                    <td data-label="Action">
+                                                                                    <a href="javascript:void(0)" class="icon-btn btn--success ml-1 approved" data-toggle="tooltip" data-original-title="Approve" data-id="66"><i class="las la-check"></i></a> 
+                                            <a href="javascript:void(0)" class="icon-btn btn--danger ml-1 cancel" data-toggle="tooltip" data-original-title="Banned" data-id="66"><i class="las la-times"></i></a> 
+                                                                                <a href="https://script.viserlab.com/bloodlab/admin/donor/edit/66" class="icon-btn btn--primary ml-1"><i class="las la-pen"></i></a>
+                                    </td>
+                                </tr>
+                                                            <tr>
+                                    <td data-label="Name - Profession">
+                                        <span>Muhammad Haris</span><br>
+                                        <span>student</span>
+                                    </td>
+                                    <td data-label="Email - Phone">
+                                        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fe848b9c9f978c969f8c978dcececebe99939f9792d09d9193">[email&#160;protected]</a></span><br>
+                                        <span>45478757688686</span>
+                                    </td>
+                                    <td data-label="Blood Group - Location">
+                                        <span>B+</span><br>
+                                        <span>Abbey Wood</span>
+                                    </td>
+                                    <td data-label="Religion - Address">
+                                        <span>islam</span><br>
+                                        <span>34 street</span>
+                                    </td>
+
+                                    <td data-label="Gender - Age">
+                                        <span> Male </span><br>
+                                        <span>0 Years</span>
+                                    </td>
+
+                                     <td data-label="Featured Donor">
+                                                                                    <span class="badge badge--warning">Not included</span>
+                                            <a href="javascript:void(0)" class="icon-btn btn--success ml-2 include text-white" data-toggle="tooltip" title="" data-original-title="Include" data-id="65">
+                                                <i class="las la-arrow-alt-circle-right"></i>
+                                            </a>
+                                                                            </td>
+
+                                    <td data-label="Status">
+                                                                                    <span class="badge badge--primary">Pending</span>
+                                                                            </td>
+
+                                    <td data-label="Last Update">
+                                        2023-03-12 07:39 AM<br> 6 days ago
+                                    </td>
+
+                                    <td data-label="Action">
+                                                                                    <a href="javascript:void(0)" class="icon-btn btn--success ml-1 approved" data-toggle="tooltip" data-original-title="Approve" data-id="65"><i class="las la-check"></i></a> 
+                                            <a href="javascript:void(0)" class="icon-btn btn--danger ml-1 cancel" data-toggle="tooltip" data-original-title="Banned" data-id="65"><i class="las la-times"></i></a> 
+                                                                                <a href="https://script.viserlab.com/bloodlab/admin/donor/edit/65" class="icon-btn btn--primary ml-1"><i class="las la-pen"></i></a>
+                                    </td>
+                                </tr>
+                                                            <tr>
+                                    <td data-label="Name - Profession">
+                                        <span>Syed Muzamil Rizvi</span><br>
+                                        <span>Politician</span>
+                                    </td>
+                                    <td data-label="Email - Phone">
+                                        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6b020a06061e110a06020719111d022b0c060a020745080406">[email&#160;protected]</a></span><br>
+                                        <span>09596158008</span>
+                                    </td>
+                                    <td data-label="Blood Group - Location">
+                                        <span>O+</span><br>
+                                        <span>Abbey Wood</span>
+                                    </td>
+                                    <td data-label="Religion - Address">
+                                        <span>Muslim</span><br>
+                                        <span>Baghwanpora Lal Bazar Srinagar</span>
+                                    </td>
+
+                                    <td data-label="Gender - Age">
+                                        <span> Male </span><br>
+                                        <span>33 Years</span>
+                                    </td>
+
+                                     <td data-label="Featured Donor">
+                                                                                    <span class="badge badge--warning">Not included</span>
+                                            <a href="javascript:void(0)" class="icon-btn btn--success ml-2 include text-white" data-toggle="tooltip" title="" data-original-title="Include" data-id="64">
+                                                <i class="las la-arrow-alt-circle-right"></i>
+                                            </a>
+                                                                            </td>
+
+                                    <td data-label="Status">
+                                                                                    <span class="badge badge--primary">Pending</span>
+                                                                            </td>
+
+                                    <td data-label="Last Update">
+                                        2023-03-12 07:05 AM<br> 6 days ago
+                                    </td>
+
+                                    <td data-label="Action">
+                                                                                    <a href="javascript:void(0)" class="icon-btn btn--success ml-1 approved" data-toggle="tooltip" data-original-title="Approve" data-id="64"><i class="las la-check"></i></a> 
+                                            <a href="javascript:void(0)" class="icon-btn btn--danger ml-1 cancel" data-toggle="tooltip" data-original-title="Banned" data-id="64"><i class="las la-times"></i></a> 
+                                                                                <a href="https://script.viserlab.com/bloodlab/admin/donor/edit/64" class="icon-btn btn--primary ml-1"><i class="las la-pen"></i></a>
+                                    </td>
+                                </tr>
+                                                            <tr>
+                                    <td data-label="Name - Profession">
+                                        <span>Mehedi Hasan</span><br>
+                                        <span>Student</span>
+                                    </td>
+                                    <td data-label="Email - Phone">
+                                        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5e333b363b3a376e6c6f6d1e39333f3732703d3133">[email&#160;protected]</a></span><br>
+                                        <span>01627647776</span>
+                                    </td>
+                                    <td data-label="Blood Group - Location">
+                                        <span>A-</span><br>
+                                        <span>Abbots Ripton</span>
+                                    </td>
+                                    <td data-label="Religion - Address">
+                                        <span>Islam</span><br>
+                                        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="076a626f62636e3735363447606a666e6b2964686a">[email&#160;protected]</a></span>
+                                    </td>
+
+                                    <td data-label="Gender - Age">
+                                        <span> Male </span><br>
+                                        <span>20 Years</span>
+                                    </td>
+
+                                     <td data-label="Featured Donor">
+                                                                                    <span class="badge badge--warning">Not included</span>
+                                            <a href="javascript:void(0)" class="icon-btn btn--success ml-2 include text-white" data-toggle="tooltip" title="" data-original-title="Include" data-id="63">
+                                                <i class="las la-arrow-alt-circle-right"></i>
+                                            </a>
+                                                                            </td>
+
+                                    <td data-label="Status">
+                                                                                    <span class="badge badge--primary">Pending</span>
+                                                                            </td>
+
+                                    <td data-label="Last Update">
+                                        2023-02-25 05:27 AM<br> 3 weeks ago
+                                    </td>
+
+                                    <td data-label="Action">
+                                                                                    <a href="javascript:void(0)" class="icon-btn btn--success ml-1 approved" data-toggle="tooltip" data-original-title="Approve" data-id="63"><i class="las la-check"></i></a> 
+                                            <a href="javascript:void(0)" class="icon-btn btn--danger ml-1 cancel" data-toggle="tooltip" data-original-title="Banned" data-id="63"><i class="las la-times"></i></a> 
+                                                                                <a href="https://script.viserlab.com/bloodlab/admin/donor/edit/63" class="icon-btn btn--primary ml-1"><i class="las la-pen"></i></a>
+                                    </td>
+                                </tr>
+                                                            <tr>
+                                    <td data-label="Name - Profession">
+                                        <span>Teste Mais</span><br>
+                                        <span>sdf</span>
+                                    </td>
+                                    <td data-label="Email - Phone">
+                                        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fc88998f8899919d958fbc919d958fd29f9391">[email&#160;protected]</a></span><br>
+                                        <span>559895626599</span>
+                                    </td>
+                                    <td data-label="Blood Group - Location">
+                                        <span>B+</span><br>
+                                        <span>Abbey Wood</span>
+                                    </td>
+                                    <td data-label="Religion - Address">
+                                        <span>sdf</span><br>
+                                        <span>Rua test</span>
+                                    </td>
+
+                                    <td data-label="Gender - Age">
+                                        <span> Male </span><br>
+                                        <span>42 Years</span>
+                                    </td>
+
+                                     <td data-label="Featured Donor">
+                                                                                    <span class="badge badge--warning">Not included</span>
+                                            <a href="javascript:void(0)" class="icon-btn btn--success ml-2 include text-white" data-toggle="tooltip" title="" data-original-title="Include" data-id="62">
+                                                <i class="las la-arrow-alt-circle-right"></i>
+                                            </a>
+                                                                            </td>
+
+                                    <td data-label="Status">
+                                                                                    <span class="badge badge--primary">Pending</span>
+                                                                            </td>
+
+                                    <td data-label="Last Update">
+                                        2022-09-29 05:25 PM<br> 5 months ago
+                                    </td>
+
+                                    <td data-label="Action">
+                                                                                    <a href="javascript:void(0)" class="icon-btn btn--success ml-1 approved" data-toggle="tooltip" data-original-title="Approve" data-id="62"><i class="las la-check"></i></a> 
+                                            <a href="javascript:void(0)" class="icon-btn btn--danger ml-1 cancel" data-toggle="tooltip" data-original-title="Banned" data-id="62"><i class="las la-times"></i></a> 
+                                                                                <a href="https://script.viserlab.com/bloodlab/admin/donor/edit/62" class="icon-btn btn--primary ml-1"><i class="las la-pen"></i></a>
+                                    </td>
+                                </tr>
+                                                            <tr>
+                                    <td data-label="Name - Profession">
+                                        <span>Uvaiz</span><br>
+                                        <span>Jsuekxbal</span>
+                                    </td>
+                                    <td data-label="Email - Phone">
+                                        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="027774636b78616942656f636b6e2c616d6f">[email&#160;protected]</a></span><br>
+                                        <span>9513016103</span>
+                                    </td>
+                                    <td data-label="Blood Group - Location">
+                                        <span>AB+</span><br>
+                                        <span>Bedminster</span>
+                                    </td>
+                                    <td data-label="Religion - Address">
+                                        <span>Husal</span><br>
+                                        <span>Hysnalsbduso</span>
+                                    </td>
+
+                                    <td data-label="Gender - Age">
+                                        <span> Male </span><br>
+                                        <span>23 Years</span>
+                                    </td>
+
+                                     <td data-label="Featured Donor">
+                                                                                    <span class="badge badge--warning">Not included</span>
+                                            <a href="javascript:void(0)" class="icon-btn btn--success ml-2 include text-white" data-toggle="tooltip" title="" data-original-title="Include" data-id="61">
+                                                <i class="las la-arrow-alt-circle-right"></i>
+                                            </a>
+                                                                            </td>
+
+                                    <td data-label="Status">
+                                                                                    <span class="badge badge--primary">Pending</span>
+                                                                            </td>
+
+                                    <td data-label="Last Update">
+                                        2022-09-09 02:23 AM<br> 6 months ago
+                                    </td>
+
+                                    <td data-label="Action">
+                                                                                    <a href="javascript:void(0)" class="icon-btn btn--success ml-1 approved" data-toggle="tooltip" data-original-title="Approve" data-id="61"><i class="las la-check"></i></a> 
+                                            <a href="javascript:void(0)" class="icon-btn btn--danger ml-1 cancel" data-toggle="tooltip" data-original-title="Banned" data-id="61"><i class="las la-times"></i></a> 
+                                                                                <a href="https://script.viserlab.com/bloodlab/admin/donor/edit/61" class="icon-btn btn--primary ml-1"><i class="las la-pen"></i></a>
+                                    </td>
+                                </tr>
+                                                            <tr>
+                                    <td data-label="Name - Profession">
+                                        <span>Çağatay</span><br>
+                                        <span>asdasd</span>
+                                    </td>
+                                    <td data-label="Email - Phone">
+                                        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c0a7afbab5a1a7a3a1f180a7ada1a9aceea3afad">[email&#160;protected]</a></span><br>
+                                        <span>5078762344</span>
+                                    </td>
+                                    <td data-label="Blood Group - Location">
+                                        <span>B+</span><br>
+                                        <span>Abbey Wood</span>
+                                    </td>
+                                    <td data-label="Religion - Address">
+                                        <span>dasd</span><br>
+                                        <span>asdasd</span>
+                                    </td>
+
+                                    <td data-label="Gender - Age">
+                                        <span> Male </span><br>
+                                        <span>0 Years</span>
+                                    </td>
+
+                                     <td data-label="Featured Donor">
+                                                                                    <span class="badge badge--warning">Not included</span>
+                                            <a href="javascript:void(0)" class="icon-btn btn--success ml-2 include text-white" data-toggle="tooltip" title="" data-original-title="Include" data-id="60">
+                                                <i class="las la-arrow-alt-circle-right"></i>
+                                            </a>
+                                                                            </td>
+
+                                    <td data-label="Status">
+                                                                                    <span class="badge badge--primary">Pending</span>
+                                                                            </td>
+
+                                    <td data-label="Last Update">
+                                        2022-08-28 07:51 PM<br> 6 months ago
+                                    </td>
+
+                                    <td data-label="Action">
+                                                                                    <a href="javascript:void(0)" class="icon-btn btn--success ml-1 approved" data-toggle="tooltip" data-original-title="Approve" data-id="60"><i class="las la-check"></i></a> 
+                                            <a href="javascript:void(0)" class="icon-btn btn--danger ml-1 cancel" data-toggle="tooltip" data-original-title="Banned" data-id="60"><i class="las la-times"></i></a> 
+                                                                                <a href="https://script.viserlab.com/bloodlab/admin/donor/edit/60" class="icon-btn btn--primary ml-1"><i class="las la-pen"></i></a>
+                                    </td>
+                                </tr>
+                                                            <tr>
+                                    <td data-label="Name - Profession">
+                                        <span>mohammed flex</span><br>
+                                        <span>az</span>
+                                    </td>
+                                    <td data-label="Email - Phone">
+                                        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5e3f3a3337301e3a3b3331703d3133">[email&#160;protected]</a></span><br>
+                                        <span>11111</span>
+                                    </td>
+                                    <td data-label="Blood Group - Location">
+                                        <span>AB+</span><br>
+                                        <span>Crystalpalace</span>
+                                    </td>
+                                    <td data-label="Religion - Address">
+                                        <span>az</span><br>
+                                        <span>rabat</span>
+                                    </td>
+
+                                    <td data-label="Gender - Age">
+                                        <span> Male </span><br>
+                                        <span>0 Years</span>
+                                    </td>
+
+                                     <td data-label="Featured Donor">
+                                                                                    <span class="badge badge--warning">Not included</span>
+                                            <a href="javascript:void(0)" class="icon-btn btn--success ml-2 include text-white" data-toggle="tooltip" title="" data-original-title="Include" data-id="59">
+                                                <i class="las la-arrow-alt-circle-right"></i>
+                                            </a>
+                                                                            </td>
+
+                                    <td data-label="Status">
+                                                                                    <span class="badge badge--primary">Pending</span>
+                                                                            </td>
+
+                                    <td data-label="Last Update">
+                                        2022-08-10 10:40 PM<br> 7 months ago
+                                    </td>
+
+                                    <td data-label="Action">
+                                                                                    <a href="javascript:void(0)" class="icon-btn btn--success ml-1 approved" data-toggle="tooltip" data-original-title="Approve" data-id="59"><i class="las la-check"></i></a> 
+                                            <a href="javascript:void(0)" class="icon-btn btn--danger ml-1 cancel" data-toggle="tooltip" data-original-title="Banned" data-id="59"><i class="las la-times"></i></a> 
+                                                                                <a href="https://script.viserlab.com/bloodlab/admin/donor/edit/59" class="icon-btn btn--primary ml-1"><i class="las la-pen"></i></a>
+                                    </td>
+                                </tr>
+                                                            <tr>
+                                    <td data-label="Name - Profession">
+                                        <span>Demo</span><br>
+                                        <span>Demo</span>
+                                    </td>
+                                    <td data-label="Email - Phone">
+                                        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5236373f3d636061666712353f333b3e7c313d3f">[email&#160;protected]</a></span><br>
+                                        <span>9812345678</span>
+                                    </td>
+                                    <td data-label="Blood Group - Location">
+                                        <span>A+</span><br>
+                                        <span>Abbey Wood</span>
+                                    </td>
+                                    <td data-label="Religion - Address">
+                                        <span>Demo</span><br>
+                                        <span>demo</span>
+                                    </td>
+
+                                    <td data-label="Gender - Age">
+                                        <span> Male </span><br>
+                                        <span>0 Years</span>
+                                    </td>
+
+                                     <td data-label="Featured Donor">
+                                                                                    <span class="badge badge--warning">Not included</span>
+                                            <a href="javascript:void(0)" class="icon-btn btn--success ml-2 include text-white" data-toggle="tooltip" title="" data-original-title="Include" data-id="58">
+                                                <i class="las la-arrow-alt-circle-right"></i>
+                                            </a>
+                                                                            </td>
+
+                                    <td data-label="Status">
+                                                                                    <span class="badge badge--primary">Pending</span>
+                                                                            </td>
+
+                                    <td data-label="Last Update">
+                                        2022-08-01 12:09 PM<br> 7 months ago
+                                    </td>
+
+                                    <td data-label="Action">
+                                                                                    <a href="javascript:void(0)" class="icon-btn btn--success ml-1 approved" data-toggle="tooltip" data-original-title="Approve" data-id="58"><i class="las la-check"></i></a> 
+                                            <a href="javascript:void(0)" class="icon-btn btn--danger ml-1 cancel" data-toggle="tooltip" data-original-title="Banned" data-id="58"><i class="las la-times"></i></a> 
+                                                                                <a href="https://script.viserlab.com/bloodlab/admin/donor/edit/58" class="icon-btn btn--primary ml-1"><i class="las la-pen"></i></a>
+                                    </td>
+                                </tr>
+                                                            <tr>
+                                    <td data-label="Name - Profession">
+                                        <span>Imran Hossain</span><br>
+                                        <span>Student</span>
+                                    </td>
+                                    <td data-label="Email - Phone">
+                                        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a0cdc4c9cdd2c1cec8cfd3d3c1c9ce8ecdc4c9c8919293e0c7cdc1c9cc8ec3cfcd">[email&#160;protected]</a></span><br>
+                                        <span>01786597976</span>
+                                    </td>
+                                    <td data-label="Blood Group - Location">
+                                        <span>O+</span><br>
+                                        <span>Abbey Wood</span>
+                                    </td>
+                                    <td data-label="Religion - Address">
+                                        <span>Muslim</span><br>
+                                        <span>Dhaka, Adabor</span>
+                                    </td>
+
+                                    <td data-label="Gender - Age">
+                                        <span> Male </span><br>
+                                        <span>23 Years</span>
+                                    </td>
+
+                                     <td data-label="Featured Donor">
+                                                                                    <span class="badge badge--warning">Not included</span>
+                                            <a href="javascript:void(0)" class="icon-btn btn--success ml-2 include text-white" data-toggle="tooltip" title="" data-original-title="Include" data-id="57">
+                                                <i class="las la-arrow-alt-circle-right"></i>
+                                            </a>
+                                                                            </td>
+
+                                    <td data-label="Status">
+                                                                                    <span class="badge badge--primary">Pending</span>
+                                                                            </td>
+
+                                    <td data-label="Last Update">
+                                        2022-07-23 01:00 PM<br> 7 months ago
+                                    </td>
+
+                                    <td data-label="Action">
+                                                                                    <a href="javascript:void(0)" class="icon-btn btn--success ml-1 approved" data-toggle="tooltip" data-original-title="Approve" data-id="57"><i class="las la-check"></i></a> 
+                                            <a href="javascript:void(0)" class="icon-btn btn--danger ml-1 cancel" data-toggle="tooltip" data-original-title="Banned" data-id="57"><i class="las la-times"></i></a> 
+                                                                                <a href="https://script.viserlab.com/bloodlab/admin/donor/edit/57" class="icon-btn btn--primary ml-1"><i class="las la-pen"></i></a>
+                                    </td>
+                                </tr>
+                                                            <tr>
+                                    <td data-label="Name - Profession">
+                                        <span>Ashley Hei</span><br>
+                                        <span>Web Developer</span>
+                                    </td>
+                                    <td data-label="Email - Phone">
+                                        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a9ddccc8cac1ccdbe9ccd1c8c4d9c5cc87cac6c4">[email&#160;protected]</a></span><br>
+                                        <span>09667020561</span>
+                                    </td>
+                                    <td data-label="Blood Group - Location">
+                                        <span>B+</span><br>
+                                        <span>Avonmouth</span>
+                                    </td>
+                                    <td data-label="Religion - Address">
+                                        <span>Christian</span><br>
+                                        <span>villarosa</span>
+                                    </td>
+
+                                    <td data-label="Gender - Age">
+                                        <span> Female </span><br>
+                                        <span>0 Years</span>
+                                    </td>
+
+                                     <td data-label="Featured Donor">
+                                                                                    <span class="badge badge--warning">Not included</span>
+                                            <a href="javascript:void(0)" class="icon-btn btn--success ml-2 include text-white" data-toggle="tooltip" title="" data-original-title="Include" data-id="56">
+                                                <i class="las la-arrow-alt-circle-right"></i>
+                                            </a>
+                                                                            </td>
+
+                                    <td data-label="Status">
+                                                                                    <span class="badge badge--primary">Pending</span>
+                                                                            </td>
+
+                                    <td data-label="Last Update">
+                                        2022-07-09 04:33 AM<br> 8 months ago
+                                    </td>
+
+                                    <td data-label="Action">
+                                                                                    <a href="javascript:void(0)" class="icon-btn btn--success ml-1 approved" data-toggle="tooltip" data-original-title="Approve" data-id="56"><i class="las la-check"></i></a> 
+                                            <a href="javascript:void(0)" class="icon-btn btn--danger ml-1 cancel" data-toggle="tooltip" data-original-title="Banned" data-id="56"><i class="las la-times"></i></a> 
+                                                                                <a href="https://script.viserlab.com/bloodlab/admin/donor/edit/56" class="icon-btn btn--primary ml-1"><i class="las la-pen"></i></a>
+                                    </td>
+                                </tr>
+                                                            <tr>
+                                    <td data-label="Name - Profession">
+                                        <span>Shanto Islam</span><br>
+                                        <span>Student</span>
+                                    </td>
+                                    <td data-label="Email - Phone">
+                                        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="54073c353a203b36307a3e3b2d143339353d387a373b39">[email&#160;protected]</a></span><br>
+                                        <span>+8801761155089</span>
+                                    </td>
+                                    <td data-label="Blood Group - Location">
+                                        <span>A+</span><br>
+                                        <span>Abbey Wood</span>
+                                    </td>
+                                    <td data-label="Religion - Address">
+                                        <span>Islam</span><br>
+                                        <span>Moheshwar, Raksha,Lalpur,Natore,Rajshahi,Bangladesh</span>
+                                    </td>
+
+                                    <td data-label="Gender - Age">
+                                        <span> Male </span><br>
+                                        <span>0 Years</span>
+                                    </td>
+
+                                     <td data-label="Featured Donor">
+                                                                                    <span class="badge badge--warning">Not included</span>
+                                            <a href="javascript:void(0)" class="icon-btn btn--success ml-2 include text-white" data-toggle="tooltip" title="" data-original-title="Include" data-id="55">
+                                                <i class="las la-arrow-alt-circle-right"></i>
+                                            </a>
+                                                                            </td>
+
+                                    <td data-label="Status">
+                                                                                    <span class="badge badge--primary">Pending</span>
+                                                                            </td>
+
+                                    <td data-label="Last Update">
+                                        2022-07-05 07:01 AM<br> 8 months ago
+                                    </td>
+
+                                    <td data-label="Action">
+                                                                                    <a href="javascript:void(0)" class="icon-btn btn--success ml-1 approved" data-toggle="tooltip" data-original-title="Approve" data-id="55"><i class="las la-check"></i></a> 
+                                            <a href="javascript:void(0)" class="icon-btn btn--danger ml-1 cancel" data-toggle="tooltip" data-original-title="Banned" data-id="55"><i class="las la-times"></i></a> 
+                                                                                <a href="https://script.viserlab.com/bloodlab/admin/donor/edit/55" class="icon-btn btn--primary ml-1"><i class="las la-pen"></i></a>
+                                    </td>
+                                </tr>
+                                                            <tr>
+                                    <td data-label="Name - Profession">
+                                        <span>rakib hasan</span><br>
+                                        <span>web developer</span>
+                                    </td>
+                                    <td data-label="Email - Phone">
+                                        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="027667717642656f636b6e2c616d6f">[email&#160;protected]</a></span><br>
+                                        <span>01785478965</span>
+                                    </td>
+                                    <td data-label="Blood Group - Location">
+                                        <span>A+</span><br>
+                                        <span>Trafford</span>
+                                    </td>
+                                    <td data-label="Religion - Address">
+                                        <span>muslim</span><br>
+                                        <span>43/2 monesshor road zigatola</span>
+                                    </td>
+
+                                    <td data-label="Gender - Age">
+                                        <span> Male </span><br>
+                                        <span>0 Years</span>
+                                    </td>
+
+                                     <td data-label="Featured Donor">
+                                                                                    <span class="badge badge--warning">Not included</span>
+                                            <a href="javascript:void(0)" class="icon-btn btn--success ml-2 include text-white" data-toggle="tooltip" title="" data-original-title="Include" data-id="54">
+                                                <i class="las la-arrow-alt-circle-right"></i>
+                                            </a>
+                                                                            </td>
+
+                                    <td data-label="Status">
+                                                                                    <span class="badge badge--primary">Pending</span>
+                                                                            </td>
+
+                                    <td data-label="Last Update">
+                                        2022-05-20 08:11 AM<br> 10 months ago
+                                    </td>
+
+                                    <td data-label="Action">
+                                                                                    <a href="javascript:void(0)" class="icon-btn btn--success ml-1 approved" data-toggle="tooltip" data-original-title="Approve" data-id="54"><i class="las la-check"></i></a> 
+                                            <a href="javascript:void(0)" class="icon-btn btn--danger ml-1 cancel" data-toggle="tooltip" data-original-title="Banned" data-id="54"><i class="las la-times"></i></a> 
+                                                                                <a href="https://script.viserlab.com/bloodlab/admin/donor/edit/54" class="icon-btn btn--primary ml-1"><i class="las la-pen"></i></a>
+                                    </td>
+                                </tr>
+                                                            <tr>
+                                    <td data-label="Name - Profession">
+                                        <span>Peter A Crawford</span><br>
+                                        <span>Student</span>
+                                    </td>
+                                    <td data-label="Email - Phone">
+                                        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="42232626232c6c3123302430233802252f232b2e6c212d2f">[email&#160;protected]</a></span><br>
+                                        <span>0516937916421</span>
+                                    </td>
+                                    <td data-label="Blood Group - Location">
+                                        <span>A+</span><br>
+                                        <span>Alum Rock</span>
+                                    </td>
+                                    <td data-label="Religion - Address">
+                                        <span>Muslim</span><br>
+                                        <span>2670  Jarvisville Road</span>
+                                    </td>
+
+                                    <td data-label="Gender - Age">
+                                        <span> Male </span><br>
+                                        <span>24 Years</span>
+                                    </td>
+
+                                     <td data-label="Featured Donor">
+                                                                                    <span class="badge badge--warning">Not included</span>
+                                            <a href="javascript:void(0)" class="icon-btn btn--success ml-2 include text-white" data-toggle="tooltip" title="" data-original-title="Include" data-id="53">
+                                                <i class="las la-arrow-alt-circle-right"></i>
+                                            </a>
+                                                                            </td>
+
+                                    <td data-label="Status">
+                                                                                    <span class="badge badge--primary">Pending</span>
+                                                                            </td>
+
+                                    <td data-label="Last Update">
+                                        2022-05-15 01:47 PM<br> 10 months ago
+                                    </td>
+
+                                    <td data-label="Action">
+                                                                                    <a href="javascript:void(0)" class="icon-btn btn--success ml-1 approved" data-toggle="tooltip" data-original-title="Approve" data-id="53"><i class="las la-check"></i></a> 
+                                            <a href="javascript:void(0)" class="icon-btn btn--danger ml-1 cancel" data-toggle="tooltip" data-original-title="Banned" data-id="53"><i class="las la-times"></i></a> 
+                                                                                <a href="https://script.viserlab.com/bloodlab/admin/donor/edit/53" class="icon-btn btn--primary ml-1"><i class="las la-pen"></i></a>
+                                    </td>
+                                </tr>
+                                                            <tr>
+                                    <td data-label="Name - Profession">
+                                        <span>Daiyan Merchant</span><br>
+                                        <span>12</span>
+                                    </td>
+                                    <td data-label="Email - Phone">
+                                        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9efafff7e7fff0f3fbecfdf6fff0eadef6f1eaf3fff7f2b0fdf1f3">[email&#160;protected]</a></span><br>
+                                        <span>+923343611010</span>
+                                    </td>
+                                    <td data-label="Blood Group - Location">
+                                        <span>B+</span><br>
+                                        <span>Abbey Wood</span>
+                                    </td>
+                                    <td data-label="Religion - Address">
+                                        <span>Merchant</span><br>
+                                        <span>M.A Jinnah Road</span>
+                                    </td>
+
+                                    <td data-label="Gender - Age">
+                                        <span> Male </span><br>
+                                        <span>0 Years</span>
+                                    </td>
+
+                                     <td data-label="Featured Donor">
+                                                                                    <span class="badge badge--warning">Not included</span>
+                                            <a href="javascript:void(0)" class="icon-btn btn--success ml-2 include text-white" data-toggle="tooltip" title="" data-original-title="Include" data-id="52">
+                                                <i class="las la-arrow-alt-circle-right"></i>
+                                            </a>
+                                                                            </td>
+
+                                    <td data-label="Status">
+                                                                                    <span class="badge badge--primary">Pending</span>
+                                                                            </td>
+
+                                    <td data-label="Last Update">
+                                        2022-04-10 01:25 PM<br> 11 months ago
+                                    </td>
+
+                                    <td data-label="Action">
+                                                                                    <a href="javascript:void(0)" class="icon-btn btn--success ml-1 approved" data-toggle="tooltip" data-original-title="Approve" data-id="52"><i class="las la-check"></i></a> 
+                                            <a href="javascript:void(0)" class="icon-btn btn--danger ml-1 cancel" data-toggle="tooltip" data-original-title="Banned" data-id="52"><i class="las la-times"></i></a> 
+                                                                                <a href="https://script.viserlab.com/bloodlab/admin/donor/edit/52" class="icon-btn btn--primary ml-1"><i class="las la-pen"></i></a>
+                                    </td>
+                                </tr>
+                                                            <tr>
+                                    <td data-label="Name - Profession">
+                                        <span>Masud</span><br>
+                                        <span>Student</span>
+                                    </td>
+                                    <td data-label="Email - Phone">
+                                        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="036e6270766767437762736a2d7166">[email&#160;protected]</a></span><br>
+                                        <span>01885655985</span>
+                                    </td>
+                                    <td data-label="Blood Group - Location">
+                                        <span>AB+</span><br>
+                                        <span>Abbotsley</span>
+                                    </td>
+                                    <td data-label="Religion - Address">
+                                        <span>Islam</span><br>
+                                        <span>Bangladesh</span>
+                                    </td>
+
+                                    <td data-label="Gender - Age">
+                                        <span> Male </span><br>
+                                        <span>33 Years</span>
+                                    </td>
+
+                                     <td data-label="Featured Donor">
+                                                                                    <span class="badge badge--warning">Not included</span>
+                                            <a href="javascript:void(0)" class="icon-btn btn--success ml-2 include text-white" data-toggle="tooltip" title="" data-original-title="Include" data-id="51">
+                                                <i class="las la-arrow-alt-circle-right"></i>
+                                            </a>
+                                                                            </td>
+
+                                    <td data-label="Status">
+                                                                                    <span class="badge badge--primary">Pending</span>
+                                                                            </td>
+
+                                    <td data-label="Last Update">
+                                        2022-04-04 03:27 PM<br> 11 months ago
+                                    </td>
+
+                                    <td data-label="Action">
+                                                                                    <a href="javascript:void(0)" class="icon-btn btn--success ml-1 approved" data-toggle="tooltip" data-original-title="Approve" data-id="51"><i class="las la-check"></i></a> 
+                                            <a href="javascript:void(0)" class="icon-btn btn--danger ml-1 cancel" data-toggle="tooltip" data-original-title="Banned" data-id="51"><i class="las la-times"></i></a> 
+                                                                                <a href="https://script.viserlab.com/bloodlab/admin/donor/edit/51" class="icon-btn btn--primary ml-1"><i class="las la-pen"></i></a>
+                                    </td>
+                                </tr>
+                                                            <tr>
+                                    <td data-label="Name - Profession">
+                                        <span>Petio Bee</span><br>
+                                        <span>Lud Donor</span>
+                                    </td>
+                                    <td data-label="Email - Phone">
+                                        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="adcfcccfccdbccc3cacc9cedcccfdb83cfca">[email&#160;protected]</a></span><br>
+                                        <span>+359894936646</span>
+                                    </td>
+                                    <td data-label="Blood Group - Location">
+                                        <span>AB+</span><br>
+                                        <span>Abbey Wood</span>
+                                    </td>
+                                    <td data-label="Religion - Address">
+                                        <span>London</span><br>
+                                        <span>Abbey Wood 33</span>
+                                    </td>
+
+                                    <td data-label="Gender - Age">
+                                        <span> Male </span><br>
+                                        <span>31 Years</span>
+                                    </td>
+
+                                     <td data-label="Featured Donor">
+                                                                                    <span class="badge badge--warning">Not included</span>
+                                            <a href="javascript:void(0)" class="icon-btn btn--success ml-2 include text-white" data-toggle="tooltip" title="" data-original-title="Include" data-id="50">
+                                                <i class="las la-arrow-alt-circle-right"></i>
+                                            </a>
+                                                                            </td>
+
+                                    <td data-label="Status">
+                                                                                    <span class="badge badge--primary">Pending</span>
+                                                                            </td>
+
+                                    <td data-label="Last Update">
+                                        2022-02-27 01:56 PM<br> 7860990141 years ago
+                                    </td>
+
+                                    <td data-label="Action">
+                                                                                    <a href="javascript:void(0)" class="icon-btn btn--success ml-1 approved" data-toggle="tooltip" data-original-title="Approve" data-id="50"><i class="las la-check"></i></a> 
+                                            <a href="javascript:void(0)" class="icon-btn btn--danger ml-1 cancel" data-toggle="tooltip" data-original-title="Banned" data-id="50"><i class="las la-times"></i></a> 
+                                                                                <a href="https://script.viserlab.com/bloodlab/admin/donor/edit/50" class="icon-btn btn--primary ml-1"><i class="las la-pen"></i></a>
+                                    </td>
+                                </tr>
+                                                            <tr>
+                                    <td data-label="Name - Profession">
+                                        <span>Qasba king</span><br>
+                                        <span>Dev</span>
+                                    </td>
+                                    <td data-label="Email - Phone">
+                                        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="93e0e3e1fce5f2a2d3fffaf1f6e1fcbdfae7">[email&#160;protected]</a></span><br>
+                                        <span>03336776767</span>
+                                    </td>
+                                    <td data-label="Blood Group - Location">
+                                        <span>A+</span><br>
+                                        <span>Crystalpalace</span>
+                                    </td>
+                                    <td data-label="Religion - Address">
+                                        <span>Islam</span><br>
+                                        <span>Demo address</span>
+                                    </td>
+
+                                    <td data-label="Gender - Age">
+                                        <span> Male </span><br>
+                                        <span>1 Years</span>
+                                    </td>
+
+                                     <td data-label="Featured Donor">
+                                                                                    <span class="badge badge--warning">Not included</span>
+                                            <a href="javascript:void(0)" class="icon-btn btn--success ml-2 include text-white" data-toggle="tooltip" title="" data-original-title="Include" data-id="49">
+                                                <i class="las la-arrow-alt-circle-right"></i>
+                                            </a>
+                                                                            </td>
+
+                                    <td data-label="Status">
+                                                                                    <span class="badge badge--primary">Pending</span>
+                                                                            </td>
+
+                                    <td data-label="Last Update">
+                                        2022-02-22 02:53 PM<br> 7962441258 years ago
+                                    </td>
+
+                                    <td data-label="Action">
+                                                                                    <a href="javascript:void(0)" class="icon-btn btn--success ml-1 approved" data-toggle="tooltip" data-original-title="Approve" data-id="49"><i class="las la-check"></i></a> 
+                                            <a href="javascript:void(0)" class="icon-btn btn--danger ml-1 cancel" data-toggle="tooltip" data-original-title="Banned" data-id="49"><i class="las la-times"></i></a> 
+                                                                                <a href="https://script.viserlab.com/bloodlab/admin/donor/edit/49" class="icon-btn btn--primary ml-1"><i class="las la-pen"></i></a>
+                                    </td>
+                                </tr>
+                                                            <tr>
+                                    <td data-label="Name - Profession">
+                                        <span>Ghh</span><br>
+                                        <span>Gjh</span>
+                                    </td>
+                                    <td data-label="Email - Phone">
+                                        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7e17101d11131b1c1a1916164c4e4c4f4f3e19131f1712501d1113">[email&#160;protected]</a></span><br>
+                                        <span>01000000087</span>
+                                    </td>
+                                    <td data-label="Blood Group - Location">
+                                        <span>AB+</span><br>
+                                        <span>Abbots Ripton</span>
+                                    </td>
+                                    <td data-label="Religion - Address">
+                                        <span>4Gdg</span><br>
+                                        <span>Vj bhgx</span>
+                                    </td>
+
+                                    <td data-label="Gender - Age">
+                                        <span> Male </span><br>
+                                        <span>32 Years</span>
+                                    </td>
+
+                                     <td data-label="Featured Donor">
+                                                                                    <span class="badge badge--warning">Not included</span>
+                                            <a href="javascript:void(0)" class="icon-btn btn--success ml-2 include text-white" data-toggle="tooltip" title="" data-original-title="Include" data-id="48">
+                                                <i class="las la-arrow-alt-circle-right"></i>
+                                            </a>
+                                                                            </td>
+
+                                    <td data-label="Status">
+                                                                                    <span class="badge badge--primary">Pending</span>
+                                                                            </td>
+
+                                    <td data-label="Last Update">
+                                        2022-02-03 08:59 AM<br> 8356054803 years ago
+                                    </td>
+
+                                    <td data-label="Action">
+                                                                                    <a href="javascript:void(0)" class="icon-btn btn--success ml-1 approved" data-toggle="tooltip" data-original-title="Approve" data-id="48"><i class="las la-check"></i></a> 
+                                            <a href="javascript:void(0)" class="icon-btn btn--danger ml-1 cancel" data-toggle="tooltip" data-original-title="Banned" data-id="48"><i class="las la-times"></i></a> 
+                                                                                <a href="https://script.viserlab.com/bloodlab/admin/donor/edit/48" class="icon-btn btn--primary ml-1"><i class="las la-pen"></i></a>
+                                    </td>
+                                </tr>
+                                                            <tr>
+                                    <td data-label="Name - Profession">
+                                        <span>Hp9Pq3MmlN</span><br>
+                                        <span>dcbhubRTcr</span>
+                                    </td>
+                                    <td data-label="Email - Phone">
+                                        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="62110709161622140d5b524c010d0f">[email&#160;protected]</a></span><br>
+                                        <span>0425114999</span>
+                                    </td>
+                                    <td data-label="Blood Group - Location">
+                                        <span>A+</span><br>
+                                        <span>Abbots Ripton</span>
+                                    </td>
+                                    <td data-label="Religion - Address">
+                                        <span>7J3nKIr3zv</span><br>
+                                        <span>G0f6rFi9Mj</span>
+                                    </td>
+
+                                    <td data-label="Gender - Age">
+                                        <span> Male </span><br>
+                                        <span>33 Years</span>
+                                    </td>
+
+                                     <td data-label="Featured Donor">
+                                                                                    <span class="badge badge--warning">Not included</span>
+                                            <a href="javascript:void(0)" class="icon-btn btn--success ml-2 include text-white" data-toggle="tooltip" title="" data-original-title="Include" data-id="47">
+                                                <i class="las la-arrow-alt-circle-right"></i>
+                                            </a>
+                                                                            </td>
+
+                                    <td data-label="Status">
+                                                                                    <span class="badge badge--primary">Pending</span>
+                                                                            </td>
+
+                                    <td data-label="Last Update">
+                                        2022-02-01 05:44 PM<br> 8389505095 years ago
+                                    </td>
+
+                                    <td data-label="Action">
+                                                                                    <a href="javascript:void(0)" class="icon-btn btn--success ml-1 approved" data-toggle="tooltip" data-original-title="Approve" data-id="47"><i class="las la-check"></i></a> 
+                                            <a href="javascript:void(0)" class="icon-btn btn--danger ml-1 cancel" data-toggle="tooltip" data-original-title="Banned" data-id="47"><i class="las la-times"></i></a> 
+                                                                                <a href="https://script.viserlab.com/bloodlab/admin/donor/edit/47" class="icon-btn btn--primary ml-1"><i class="las la-pen"></i></a>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer py-4">
+                    <nav aria-label="...">
+    <ul class="pagination justify-content-end mb-0">
+
+
+
+                    <li class="page-item active">
+                                <a class="page-link" href="javascript:void(0)">1</a>
+                            </li>
+                                                                                                <li class="page-item ">
+                                <a class="page-link" href="https://script.viserlab.com/bloodlab/admin/donor/list?page=2">2</a>
+                            </li>
+                                                                                                <li class="page-item ">
+                                <a class="page-link" href="https://script.viserlab.com/bloodlab/admin/donor/list?page=3">3</a>
+                            </li>
+                                                                                                <li class="page-item ">
+                                <a class="page-link" href="https://script.viserlab.com/bloodlab/admin/donor/list?page=4">4</a>
+                            </li>
+                                                                                                    <li class="page-item">
+                <a class="page-link" href="https://script.viserlab.com/bloodlab/admin/donor/list?page=2">
+                    <i class="fa fa-angle-right"></i>
+                    <span class="sr-only">Next</span>
+                </a>
+            </li>
+            </ul>
+</nav>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+

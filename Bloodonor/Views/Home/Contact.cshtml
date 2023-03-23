@@ -1,0 +1,216 @@
+﻿@{
+    ViewData["Title"] = "Contact-Us";
+}
+
+
+
+
+<div class="main-wrapper">
+    <section class="inner-hero bg_img overlay--one" style="background-image: url('assets/images/frontend/breadcrumb/61023f89990b81627537289.jpg');">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <h2 class="page-title text-white">Contact Us</h2>
+                    <ul class="page-breadcrumb justify-content-center">
+                        <li><a asp-controller="home" asp-action="index">Home</a></li>
+                        <li>Contact Us</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pt-100 pb-100 position-relative z-index shade--bg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section-header text-center">
+                        <span class="subtitle fw-bold text--base font-size--18px border-left">Contact with us</span>
+                        <h2 class="section-title">Get in touch for any kind of help and informations</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-wrapper">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="contact-wrapper-content section--bg2 h-100">
+                            <h4 class="title text-white mb-4">Reach Us</h4>
+                            <ul class="contact-info-list">
+                                <li class="single-info d-flex flex-wrap align-items-center">
+                                    <div class="single-info__icon text-white d-flex justify-content-center align-items-center rounded-3">
+                                        <i class="las la-map-marked-alt"></i>
+                                    </div>
+                                    <div class="single-info__content">
+                                        <p>Nigeria , Abuja-FCT</p>
+                                    </div>
+                                </li>
+
+                                <li class="single-info d-flex flex-wrap align-items-center">
+                                    <div class="single-info__icon text-white d-flex justify-content-center align-items-center rounded-3">
+                                        <i class="las la-envelope"></i>
+                                    </div>
+                                    <div class="single-info__content">
+                                        <p><a href="#"><span class="__cf_email__" data-cfemail="S">contactus@mail.com</span></a></p>
+                                    </div>
+                                </li>
+
+                                <li class="single-info d-flex flex-wrap align-items-center">
+                                    <div class="single-info__icon text-white d-flex justify-content-center align-items-center rounded-3">
+                                        <i class="las la-phone-volume"></i>
+                                    </div>
+                                    <div class="single-info__content">
+                                        <p><a href="tel:23467893754">23467893754</a></p>
+                                    </div>
+                                </li>
+
+                            </ul>
+
+                            <div class="map-area mt-4">
+                                <iframe src="https://maps.google.com/maps?q=12,32&hl=es;z=14&amp;output=embed"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <form method="POST" action="" class="contact-form">
+                            <input type="hidden" name="_token" value="zfyJJZKxLBS3342bKehAqkiBs6coJQAUWNYym88d">                        
+                            <div class="row">
+                                <div class="form-group col-xl-6">
+                                    <label>Name <sup class="text--danger">*</sup></label>
+                                    <input type="text" name="name" placeholder="Full name" value="" class="form--control" required="">
+                                </div>
+                                <div class="form-group col-xl-6">
+                                    <label>Email <sup class="text--danger">*</sup></label>
+                                    <input type="email" name="email" placeholder="Email address" value="" class="form--control" required="">
+                                </div>
+                                <div class="form-group col-lg-12">
+                                    <label>Subject <sup class="text--danger">*</sup></label>
+                                    <input type="text" name="subject" placeholder="Enter Subject" value="" class="form--control" required="">
+                                </div>
+                                <div class="form-group col-lg-12">
+                                    <label>Message <sup class="text--danger">*</sup></label>
+                                    <textarea name="message" placeholder="Your message" class="form--control" required=""></textarea>
+                                </div>
+                                <div class="col-lg-12">
+                                    <button type="submit" class="btn btn--base w-100">Submit Now</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</div>
+
+
+
+
+<script>
+    (function () {
+        'use strict';
+        $(document).on('click', '.subscribe-btn', function () {
+            var email = $("#emailSub").val();
+            if (email) {
+                $.ajax({
+                    headers: { "X-CSRF-TOKEN": "zfyJJZKxLBS3342bKehAqkiBs6coJQAUWNYym88d", },
+                    url: "~/subscribe",
+                    method: "POST",
+                    data: { email: email },
+                    success: function (response) {
+                        if (response.success) {
+                            notify('success', response.success);
+                            $("#emailSub").val('');
+                        } else {
+                            $.each(response, function (i, val) {
+                                notify('error', val);
+                            });
+                        }
+                    }
+                });
+            }
+            else {
+                notify('error', "Please Input Your Email");
+            }
+        });
+
+        $('.policy').on('click', function () {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.get('~/cookie/accept', function (response) {
+                $('.cookie__wrapper').addClass('d-none');
+                notify('success', response);
+            });
+        });
+    })();
+</script>
+<link rel="stylesheet" href="~/assets/global/css/iziToast.min.css">
+<script src="~/assets/global/js/iziToast.min.js"></script>
+
+<script>
+    "use strict";
+    function notify(status, message) {
+        iziToast[status]({
+            message: message,
+            position: "topRight"
+        });
+    }
+</script>
+<script>
+    (function ($) {
+        "use strict";
+        $(".langSel").on("change", function () {
+            window.location.href = "~/change/" + $(this).val();
+        });
+    })(jQuery);
+</script>
+
+
+<script>
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/5fe0b9b2a8a254155ab5421d/1eq2tap1m';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+</script>
+
+<script>
+    if (window.top != window.self) {
+        document.body.innerHTML += '<div style="position:fixed;top:0;width:100%;z-index:9999999;background:#f8d7da;color:#721c24;text-align:center; padding: 20px;"><p style="font-size:20px; font-weight: bold;">You are using this website under an external iframe!!</p><p style="font-size:16px; margin-top: 20px;">for a better experience, please browse directly instead of an external iframe.</p><a href="' + window.self.location + '" target="_blank" style=" margin-top:20px; color: #fff;background-color: #dc3545; padding: 5px 10px; border-radius: 5px; text-decoration: none;">Browse Directly</a></div>';
+    }
+</script>
+
+
+<script>
+    adroll_adv_id = "YXRNNTO7ZBAMFBH67UUE5M";
+    adroll_pix_id = "MMQQDWGN25EXPHGRPA3NLR";
+    adroll_version = "2.0";
+    (function (w, d, e, o, a) {
+        w.__adroll_loaded = true;
+        w.adroll = w.adroll || [];
+        w.adroll.f = ['setProperties', 'identify', 'track'];
+        var roundtripUrl = "https://s.adroll.com/j/" + adroll_adv_id
+            + "/roundtrip.js";
+        for (a = 0; a < w.adroll.f.length; a++) {
+            w.adroll[w.adroll.f[a]] = w.adroll[w.adroll.f[a]] || (function (n) {
+                return function () {
+                    w.adroll.push([n, arguments])
+                }
+            })(w.adroll.f[a])
+        }
+        e = d.createElement('script');
+        o = d.getElementsByTagName('script')[0];
+        e.async = 1;
+        e.src = roundtripUrl;
+        o.parentNode.insertBefore(e, o);
+    })(window, document);
+    adroll.track("pageView");
+</script>
+

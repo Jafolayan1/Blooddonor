@@ -1,0 +1,137 @@
+﻿@{
+    Layout = "_AdminLayout";
+    var location = ViewData["Location"] as IEnumerable<Location>;
+}
+
+
+
+
+<div class="bodywrapper__inner">
+    <div class="row align-items-center mb-30 justify-content-between">
+        <div class="col-lg-6 col-sm-6">
+            <h6 class="page-title">Manage City</h6>
+        </div>
+        <div class="col-lg-6 col-sm-6 text-sm-right mt-sm-0 mt-3 right-part">
+            <a href="javascript:void(0)" class="btn btn-sm btn--primary box--shadow1 text--small addCity"><i class="fa fa-fw fa-paper-plane"></i>Add City</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card b-radius--10 ">
+                <div class="card-body p-0">
+                    <div class="table-responsive--sm table-responsive">
+                        <table class="table table--light style--two">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    @*<th>Last Update</th>*@
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in location)
+                                {
+
+                                    <tr>
+                                        <td data-label="Name">@item.Name</td>
+
+                                        @* <td data-label="Last Update">
+                                    2021-08-01 12:28 AM<br> 12166799000 years ago
+                                    </td>*@
+                                        <td data-label="Action">
+                                            <a href="javascript:void(0)" class="icon-btn btn--primary ml-1 updateCity"
+                                               data-id="9"
+                                               data-name="Derby1"
+                                               data-status="1"><i class="las la-pen"></i></a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer py-4">
+                    <nav aria-label="...">
+                        <ul class="pagination justify-content-end mb-0">
+
+
+
+
+                            <li>
+                            </li>
+                        </ul>
+                    </nav>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    @*<div id="cityModel" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+    <h5 class="modal-title">Add City</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    <form action="https://script.viserlab.com/bloodlab/admin/city/store" method="POST">
+    <input type="hidden" name="_token" value="dFuNdwAwTOrIL6DCqoSL8QlER00aFyWBU43mMfW6">                    <div class="modal-body">
+    <div class="form-group">
+    <label for="name" class="form-control-label font-weight-bold">Name</label>
+    <input type="text" class="form-control form-control-lg" name="name" id="name" placeholder="Enter Name" maxlength="80" required="">
+    </div>
+
+    <div class="form-group">
+    <label class="form-control-label font-weight-bold">Status </label>
+    <input type="checkbox" data-width="100%" data-onstyle="-success" data-offstyle="-danger"
+    data-toggle="toggle" data-on="Enable" data-off="Disable" name="status">
+    </div>
+
+    </div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn--dark" data-dismiss="modal">Close</button>
+    <button type="submit" class="btn btn--primary"><i class="fa fa-fw fa-paper-plane"></i>Create</button>
+    </div>
+    </form>
+    </div>
+    </div>
+    </div>
+
+
+    <div id="updateCityModel" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+    <h5 class="modal-title">Update City</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    <form action="https://script.viserlab.com/bloodlab/admin/city/update" method="POST">
+    <input type="hidden" name="_token" value="dFuNdwAwTOrIL6DCqoSL8QlER00aFyWBU43mMfW6">                    <input type="hidden" name="id">
+    <div class="modal-body">
+    <div class="form-group">
+    <label for="name" class="form-control-label font-weight-bold">Name</label>
+    <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Enter Name" maxlength="80" required="">
+    </div>
+
+    <div class="form-group">
+    <label class="form-control-label font-weight-bold">Status </label>
+    <input type="checkbox" data-width="100%" data-onstyle="-success" data-offstyle="-danger"
+    data-toggle="toggle" data-on="Enable" data-off="Disabled" name="status">
+    </div>
+
+    </div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn--dark" data-dismiss="modal">Close</button>
+    <button type="submit" class="btn btn--primary"><i class="fa fa-fw fa-paper-plane"></i>Update</button>
+    </div>
+    </form>
+    </div>
+    </div>
+    </div>*@
+</div>
